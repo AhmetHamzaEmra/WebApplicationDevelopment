@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-
-
-
+	<title>Naximize New Window</title>
 	<script type="text/javascript">
 		var maxWindow;
-		function createWindow() {
-		var winWidth=300;
+		function createWindow(){
+			var winWidth=300;
+			var winHeight=100;
+			var winLeft=(screen.width-winWidth)/2;
+			var winTop=(screen.width-winHeight)/2;
+			var winOptions=",width="+winWidth;
+			winOptions+=",height="+winHeight;
+			winOptions+=",left="+winLeft;
+			winOptions+=",top="+winTop;
+			maxWindow=window.open("MaxWindow.html","newWindow",winOptions);
+			maxWindow.focus();
+
 		}
-		var winHeight=lOO;
-		var w~nleft = (screen.width-winWidth)/2;
-		var w~nTop.= (screen.height-winHeight)/2;
-		var w1nOpt1ons =",width=" + winWidth;
-		winOptions +=",height="+ winHeight·
-		winOptions +=",left="+ winleft;
-		winOptions += ",top="+ winTop;
-		maxWindow = window.open("MaxWindow.html"
-		"newWindow", winOptions);
-		maxWindow.focus();
 
 
-		function maximizeWindow() {
-			maxWindow.moveTo (O,O);
-			maxW1ndow.resizeTo(screen.availWidth, screen.availHeight);
-			maxW1ndow.focus();
+		
+		function maximizeWindow(){
+			maxWindow.moveTo(0,0);
+			maxWindow.resizeTo(screen.availWidth, screen.availHeight);
+			maxWindow.focus()
+		}
+
+
 	</script>
-
-
-
 </head>
-	<body>
+<body>
 	<form action="">
 	<p>
 		<input type="button" value="create new Window" onclick="createWindow()" >
